@@ -1,25 +1,21 @@
 ---
 layout: home
 title: Home
+subtitle: Backend Developer Intern at VNPT Media
 ---
 
-# Welcome to My Portfolio
-
-Hi, I'm Pham Ngoc Quang, an intern backend developer at VNPT Media.
+Welcome to my portfolio! I'm Pham Ngoc Quang, passionate about building efficient backend systems.
 
 ## About Me
 
-Learn more [about me](about).
-
-## Projects
-
-Check out my [projects](projects).
+I'm currently interning as a backend developer at VNPT Media, focusing on technologies like Spring Boot to create scalable applications.
 
 ## Skills
 
 - Spring Boot
+- Java
+- Python (Django)
+- Kotlin (Jetpack Compose)
+- Microservices Architecture
 
-## Contact
-
-- Email: qpquangpham10212004@gmail.com
-- LinkedIn: https://www.linkedin.com/in/qnp211004/
+Check out my [projects](projects) and feel free to [contact me](mailto:qpquangpham10212004@gmail.com).
