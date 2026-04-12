@@ -16,4 +16,4 @@ I'm an intern backend developer at VNPT Media, specializing in Spring Boot and m
 ## Contact
 
 - Email: qpquangpham10212004@gmail.com
-- LinkedIn: [Pham Ngoc Quang](https://www.linkedin.com/in/qnp211004/)
+- LinkedIn: [Pham Ngoc Quang](https://www.linkedin.com/in/qnp211004)
