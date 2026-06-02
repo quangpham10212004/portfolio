@@ -104,6 +104,194 @@
             background-color: #09090d;
             border-right: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        /* Light Theme Styles */
+        body.light-theme {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        body.light-theme .glowing-orb {
+            opacity: 0.08;
+        }
+
+        body.light-theme .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        body.light-theme .glass-card:hover {
+            border: 1px solid rgba(37, 99, 230, 0.2);
+            box-shadow: 0 10px 35px -5px rgba(37, 99, 230, 0.1);
+        }
+
+        body.light-theme nav {
+            background-color: rgba(248, 250, 252, 0.8) !important;
+            border-color: rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-theme nav a {
+            color: #475569;
+        }
+
+        body.light-theme nav a:hover {
+            color: #0f172a;
+        }
+
+        body.light-theme nav #theme-toggle {
+            background-color: rgba(15, 23, 42, 0.05);
+            border-color: rgba(15, 23, 42, 0.1);
+            color: #475569;
+        }
+
+        body.light-theme nav #theme-toggle:hover {
+            background-color: rgba(15, 23, 42, 0.08);
+            color: #0f172a;
+        }
+
+        body.light-theme h1, 
+        body.light-theme h2, 
+        body.light-theme h3, 
+        body.light-theme h4 {
+            color: #0f172a;
+        }
+
+        body.light-theme p {
+            color: #334155;
+        }
+
+        body.light-theme .text-gray-400 {
+            color: #475569;
+        }
+
+        body.light-theme .text-gray-300 {
+            color: #1e293b;
+        }
+
+        body.light-theme .text-gray-200 {
+            color: #1e293b !important;
+        }
+
+        body.light-theme .text-gray-500 {
+            color: #475569 !important;
+        }
+
+        /* High contrast gradient overrides for stats in light mode */
+        body.light-theme .bg-gradient-to-r.from-brand-400.to-indigo-500 {
+            background-image: linear-gradient(to right, #2563eb, #4f46e5) !important;
+        }
+        body.light-theme .bg-gradient-to-r.from-teal-400.to-emerald-500 {
+            background-image: linear-gradient(to right, #0d9488, #059669) !important;
+        }
+        body.light-theme .bg-gradient-to-r.from-brand-400.to-emerald-400 {
+            background-image: linear-gradient(to right, #2563eb, #059669) !important;
+        }
+        body.light-theme .bg-gradient-to-r.from-purple-400.to-pink-500 {
+            background-image: linear-gradient(to right, #7c3aed, #db2777) !important;
+        }
+
+        body.light-theme .bg-darkbg\/50 {
+            background-color: rgba(241, 245, 249, 0.8) !important;
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+        }
+
+        body.light-theme footer {
+            background-color: #f1f5f9 !important;
+            border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-theme footer a {
+            color: #475569;
+        }
+
+        body.light-theme footer a:hover {
+            color: #0f172a;
+        }
+
+        body.light-theme #projects-grid .glass-card {
+            border: 1px solid rgba(15, 23, 42, 0.08);
+        }
+        
+        body.light-theme #projects-grid .text-white {
+            color: #0f172a !important;
+        }
+
+        body.light-theme #experience .relative.group h3 {
+            color: #0f172a !important;
+        }
+
+        body.light-theme #about .p-4.bg-white\/\[0\.02\] {
+            background-color: rgba(15, 23, 42, 0.03) !important;
+            border-color: rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-theme #about .p-4.bg-white\/\[0\.02\] p {
+            color: #0f172a !important;
+        }
+
+        /* Specific light theme visibility overrides */
+        body.light-theme nav .text-xl {
+            background-image: linear-gradient(to right, #0f172a, #475569) !important;
+        }
+
+        body.light-theme h2.bg-gradient-to-r {
+            background-image: linear-gradient(to right, #0f172a, #334155) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+        }
+
+        body.light-theme input,
+        body.light-theme textarea {
+            background-color: rgba(15, 23, 42, 0.04) !important;
+            border-color: rgba(15, 23, 42, 0.1) !important;
+            color: #0f172a !important;
+        }
+
+        body.light-theme input:focus,
+        body.light-theme textarea:focus {
+            background-color: #ffffff !important;
+            border-color: #2563eb !important;
+        }
+
+        body.light-theme .bg-white\/5 {
+            background-color: rgba(15, 23, 42, 0.05) !important;
+            border-color: rgba(15, 23, 42, 0.1) !important;
+            color: #0f172a !important;
+        }
+
+        body.light-theme .bg-white\/5:hover {
+            background-color: rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-theme .bg-white\/5 svg {
+            color: #0f172a !important;
+        }
+
+        body.light-theme #projects .flex.flex-wrap.gap-2 {
+            background-color: rgba(15, 23, 42, 0.04) !important;
+            border-color: rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-theme .filter-btn {
+            color: #475569;
+        }
+
+        body.light-theme .filter-btn:hover {
+            color: #0f172a !important;
+        }
+
+        body.light-theme #mobile-menu {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-color: rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-theme #terminal-widget {
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-600/30 selection:text-white relative">
@@ -130,6 +318,12 @@
             </div>
 
             <div class="flex items-center gap-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-gray-300 hover:text-white transition-all focus:outline-none" aria-label="Toggle theme">
+                    <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="theme-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
                 <a href="#contact" class="hidden sm:inline-flex items-center justify-center bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold tracking-wide shadow-lg shadow-brand-600/20 hover:shadow-brand-600/30 transition-all duration-300">Contact Me</a>
                 
                 <!-- Mobile Menu Button -->
@@ -301,8 +495,8 @@
                     <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold">PTIT Software Eng GPA</div>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 bg-gradient-to-r from-brand-400 to-emerald-400 bg-clip-text text-transparent">1+ Yr</div>
-                    <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold">Backend Dev Devoted</div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 bg-gradient-to-r from-brand-400 to-emerald-400 bg-clip-text text-transparent" id="experience-stat">4 Mos</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold" id="experience-stat-label">Backend Experience</div>
                 </div>
                 <div>
                     <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">VNPT</div>
@@ -572,7 +766,7 @@
                     <!-- Glow effect on hover -->
                     <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-[#08080c] border-2 border-brand-500 flex items-center justify-center text-[10px] text-brand-400 font-bold group-hover:bg-brand-500 group-hover:text-white transition-all">💼</div>
                     
-                    <span class="text-xs text-brand-400 font-bold tracking-widest uppercase">Dec 2024 - Present</span>
+                    <span class="text-xs text-brand-400 font-bold tracking-widest uppercase">Mar 2026 - Present</span>
                     <h3 class="text-xl font-bold text-white mt-1">Backend Developer Intern</h3>
                     <h4 class="text-sm font-semibold text-gray-400">VNPT Media, Hanoi</h4>
                     
@@ -621,10 +815,10 @@
                 <div class="lg:col-span-8">
                     <h2 class="text-3xl font-extrabold mb-6 text-white">About My Craftsmanship</h2>
                     <p class="text-gray-400 leading-relaxed mb-6">
-                        I am a software engineer focused heavily on the **craftsmanship of backend platforms**. I believe backend development is not just writing APIs, but designing resilience, eventual data consistency, and high-performance communication systems.
+                        I am a software engineer focused heavily on the <strong>craftsmanship of backend platforms</strong>. I believe backend development is not just writing APIs, but designing resilience, eventual data consistency, and high-performance communication systems.
                     </p>
                     <p class="text-gray-400 leading-relaxed mb-8">
-                        Whether working with **Spring Boot Cloud architectures**, handling message routing inside **RabbitMQ**, modeling recommendations inside **Neo4j**, or fine-tuning database triggers, I seek to write clean, unit-tested, self-documenting code. In my free time, I write custom lua scripts to optimize my terminal-based Neovim environment for maximum keyboard efficiency.
+                        Whether working with <strong>Spring Boot Cloud architectures</strong>, handling message routing inside <strong>RabbitMQ</strong>, modeling recommendations inside <strong>Neo4j</strong>, or fine-tuning database triggers, I seek to write clean, unit-tested, self-documenting code. In my free time, I write custom lua scripts to optimize my terminal-based Neovim environment for maximum keyboard efficiency.
                     </p>
                     
                     <div class="grid grid-cols-2 gap-4">
@@ -752,7 +946,7 @@ return developer`,
 
             'journey.txt': 
 `[VNPT Media] - Backend Developer Intern
-(December 2024 - Present)
+(March 2026 - Present)
 ----------------------------------------
 • Developed internal eSIM platforms in Spring Boot.
 • Declared AMQP exchanges & queues via RabbitMQ.
@@ -834,7 +1028,7 @@ databases:
             } else if (fileName.endsWith('.md')) {
                 return text
                     .replace(/(#+ .*)/g, '<span class="text-amber-500 font-bold">$1</span>')
-                    .replace(/(\*\*.*?\*\*)/g, '<span class="text-sky-400 font-semibold">$1</span>');
+                    .replace(/\*\*(.*?)\*\*/g, '<span class="text-sky-400 font-semibold">$1</span>');
             } else if (fileName.endsWith('.txt')) {
                 return text
                     .replace(/(\[.*?\])/g, '<span class="text-sky-400 font-bold">$1</span>')
@@ -998,6 +1192,50 @@ databases:
                 nav.classList.remove('bg-darkbg/95', 'py-3.5', 'border-white/10');
             }
         });
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIconPath = document.getElementById('theme-icon-path');
+        
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            const isLight = document.body.classList.contains('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            
+            if (isLight) {
+                // Sun Icon
+                themeIconPath.setAttribute('d', 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z');
+            } else {
+                // Moon Icon
+                themeIconPath.setAttribute('d', 'M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z');
+            }
+        }
+        
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        
+        // Load user theme preference
+        if (localStorage.getItem('theme') === 'light') {
+            toggleTheme();
+        }
+
+        // Dynamic experience calculator
+        function calculateExperience() {
+            const startDate = new Date(2026, 2, 1); // March 1, 2026
+            const currentDate = new Date();
+            
+            // Calculate calendar months touched: (diff years * 12) + diff months + 1
+            let displayMonths = (currentDate.getFullYear() - 2026) * 12 + (currentDate.getMonth() - 2) + 1;
+            displayMonths = Math.max(4, displayMonths); // Ensure minimum 4 months as requested
+            
+            const statElement = document.getElementById('experience-stat');
+            const labelElement = document.getElementById('experience-stat-label');
+            if (statElement && labelElement) {
+                statElement.innerText = `${displayMonths} Mos`;
+                labelElement.innerText = 'Backend Experience';
+            }
+        }
+        
+        calculateExperience();
 
         // Initialize editor default load
         openFile('about.lua');
