@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pham Ngoc Quang | Backend Developer Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Pham Ngoc Quang, Backend Developer Intern at VNPT Media. Specializing in Spring Boot, Django, Microservices, and AI Integration.">
+    <meta name="keywords" content="Pham Ngoc Quang, Quang Pham, Backend Developer, Spring Boot, Java, Microservices, VNPT Media, PTIT, Portfolio">
+    <meta name="author" content="Pham Ngoc Quang">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pham Ngoc Quang | Backend Developer Portfolio">
+    <meta property="og:description" content="Backend Developer Intern specializing in Spring Boot microservices, Django, and AI systems.">
+    <meta property="og:image" content="assets/img/avatar.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#08080c',
+                        surface: '#0f0f16',
+                        'surface-card': '#161622',
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#2563eb', // Indigo Blue
+                            700: '#1d4ed8',
+                        },
+                        neonGreen: '#10b981',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Glowing Effects & Scrollbars -->
+    <style>
+        body {
+            background-color: #08080c;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08080c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e1e2f;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+
+        /* Glowing background shapes */
+        .glowing-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Card glassmorphism style */
+        .glass-card {
+            background: rgba(15, 15, 22, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card:hover {
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Terminal line number column */
+        .terminal-lines {
+            background-color: #09090d;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-600/30 selection:text-white relative">
+
+    <!-- Glowing Background Orbs -->
+    <div class="glowing-orb w-[400px] h-[400px] bg-brand-600 top-10 left-[-100px]"></div>
+    <div class="glowing-orb w-[500px] h-[500px] bg-purple-600 top-[800px] right-[-100px]"></div>
+    <div class="glowing-orb w-[450px] h-[450px] bg-teal-500 bottom-[400px] left-[10%]"></div>
+
+    <!-- Header / Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-darkbg/70 backdrop-blur-lg border-b border-white/5 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-brand-600/20">Q</span>
+                <div class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Quang.Dev</div>
+            </div>
+            
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-600 after:transition-all hover:after:w-full">About</a>
+                <a href="#tech" class="hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-600 after:transition-all hover:after:w-full">Skills</a>
+                <a href="#projects" class="hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-600 after:transition-all hover:after:w-full">Projects</a>
+                <a href="#experience" class="hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-600 after:transition-all hover:after:w-full">Experience</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold tracking-wide shadow-lg shadow-brand-600/20 hover:shadow-brand-600/30 transition-all duration-300">Contact Me</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white focus:outline-none" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-white/5 bg-darkbg/95 backdrop-blur-lg px-6 py-4 space-y-4 text-center">
+            <a href="#about" class="block text-gray-400 hover:text-white transition-colors font-medium">About</a>
+            <a href="#tech" class="block text-gray-400 hover:text-white transition-colors font-medium">Skills</a>
+            <a href="#projects" class="block text-gray-400 hover:text-white transition-colors font-medium">Projects</a>
+            <a href="#experience" class="block text-gray-400 hover:text-white transition-colors font-medium">Experience</a>
+            <a href="#contact" class="block bg-brand-600 hover:bg-brand-700 text-white py-2 rounded-xl text-sm font-semibold transition-colors">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative z-10">
+        <section class="pt-32 pb-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Hero Left -->
+            <div class="lg:col-span-5 flex flex-col items-start">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/10 border border-brand-500/20 text-brand-400 text-xs font-semibold mb-6 tracking-wide">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span>AVAILABLE FOR BACKEND INTERNSHIPS / JUNIOR ROLES</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+                    Hi, I'm <span class="bg-gradient-to-r from-brand-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Pham Ngoc Quang</span><br>
+                    <span class="text-3xl sm:text-4xl text-gray-300 font-bold">Backend Engineer</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-gray-400 mb-8 leading-relaxed max-w-lg">
+                    I build robust, highly scalable backend architectures, event-driven microservices, and AI-integrated workflows. Currently studying Software Engineering at PTIT and interning at VNPT Media.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 w-full sm:w-auto">
+                    <a href="#projects" class="w-full sm:w-auto flex items-center justify-center bg-white hover:bg-gray-100 text-darkbg px-6 py-3.5 rounded-xl font-bold tracking-wide transition-all shadow-md">
+                        Explore My Work
+                    </a>
+                    <a href="https://github.com/quangpham10212004" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-3.5 rounded-xl font-semibold tracking-wide transition-all">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.867 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Right: Interactive Neovim Terminal Widget -->
+            <div class="lg:col-span-7 w-full h-[480px] sm:h-[500px]">
+                <div class="w-full h-full rounded-2xl border border-white/10 bg-[#0c0c14] shadow-2xl flex flex-col overflow-hidden text-sm font-mono tracking-tight" id="terminal-widget">
+                    <!-- Title Bar -->
+                    <div class="flex items-center justify-between px-4 py-3 bg-[#08080c] border-b border-white/5 select-none">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                            <span class="text-xs text-gray-500 ml-2 font-medium">quang@ptit-server:~ (nvim)</span>
+                        </div>
+                        <div class="text-[10px] text-gray-600 bg-white/5 px-2 py-0.5 rounded uppercase font-bold tracking-widest">
+                            Lua Configured
+                        </div>
+                    </div>
+                    
+                    <!-- Main Body -->
+                    <div class="flex-grow flex overflow-hidden">
+                        <!-- Sidebar (File Tree) -->
+                        <div class="w-1/3 border-r border-white/5 bg-[#09090d] p-3 select-none flex flex-col gap-2">
+                            <div class="text-xs text-gray-500 font-bold uppercase tracking-wider mb-2">Workspace (nvim-tree)</div>
+                            <div class="space-y-1">
+                                <div class="text-blue-400 font-semibold flex items-center gap-1.5 cursor-default">
+                                    <span>📁</span> <span>info</span>
+                                </div>
+                                <div class="pl-4">
+                                    <button class="w-full text-left py-1 px-2 rounded hover:bg-white/5 transition-colors text-gray-400 hover:text-white flex items-center gap-1.5 active-file-btn" onclick="openFile('about.lua')">
+                                        <span>📄</span> <span>about.lua</span>
+                                    </button>
+                                    <button class="w-full text-left py-1 px-2 rounded hover:bg-white/5 transition-colors text-gray-400 hover:text-white flex items-center gap-1.5 active-file-btn" onclick="openFile('journey.txt')">
+                                        <span>📄</span> <span>journey.txt</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="text-blue-400 font-semibold flex items-center gap-1.5 cursor-default pt-2">
+                                    <span>📁</span> <span>projects</span>
+                                </div>
+                                <div class="pl-4">
+                                    <button class="w-full text-left py-1 px-2 rounded hover:bg-white/5 transition-colors text-gray-400 hover:text-white flex items-center gap-1.5 active-file-btn" onclick="openFile('featured.json')">
+                                        <span>📄</span> <span>featured.json</span>
+                                    </button>
+                                    <button class="w-full text-left py-1 px-2 rounded hover:bg-white/5 transition-colors text-gray-400 hover:text-white flex items-center gap-1.5 active-file-btn" onclick="openFile('other.json')">
+                                        <span>📄</span> <span>other.json</span>
+                                    </button>
+                                </div>
+
+                                <div class="text-blue-400 font-semibold flex items-center gap-1.5 cursor-default pt-2">
+                                    <span>📁</span> <span>skills</span>
+                                </div>
+                                <div class="pl-4">
+                                    <button class="w-full text-left py-1 px-2 rounded hover:bg-white/5 transition-colors text-gray-400 hover:text-white flex items-center gap-1.5 active-file-btn" onclick="openFile('backend.yaml')">
+                                        <span>📄</span> <span>backend.yaml</span>
+                                    </button>
+                                    <button class="w-full text-left py-1 px-2 rounded hover:bg-white/5 transition-colors text-gray-400 hover:text-white flex items-center gap-1.5 active-file-btn" onclick="openFile('tools.md')">
+                                        <span>📄</span> <span>tools.md</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Editor Pane -->
+                        <div class="w-2/3 flex flex-col bg-[#0c0c14] overflow-hidden">
+                            <!-- Tab Header -->
+                            <div class="flex items-center bg-[#09090d] border-b border-white/5 select-none text-xs">
+                                <div class="px-4 py-2 bg-[#0c0c14] text-white border-t-2 border-brand-500 font-medium flex items-center gap-2">
+                                    <span>🌐</span> <span id="tab-title">about.lua</span>
+                                </div>
+                                <div class="flex-grow"></div>
+                            </div>
+                            
+                            <!-- Editor Content Area -->
+                            <div class="flex-grow flex overflow-hidden">
+                                <!-- Line Numbers -->
+                                <div class="w-10 flex flex-col text-right pr-2.5 py-4 select-none text-[#334155]" id="line-numbers">
+                                    <!-- Populated dynamically by script -->
+                                </div>
+                                <!-- Code Editor Display -->
+                                <div class="flex-grow p-4 overflow-y-auto text-gray-300 leading-relaxed whitespace-pre" id="code-content">
+                                    <!-- Rendered dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Line (Vim Status Bar) -->
+                    <div class="bg-[#1e1e2f] border-t border-white/5 text-xs text-gray-400 select-none flex justify-between items-center px-3 py-1.5 font-sans font-medium">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-brand-600 text-white font-bold px-2 py-0.5 rounded text-[10px]">NORMAL</span>
+                            <span class="text-white font-mono text-[11px]" id="current-filename">info/about.lua</span>
+                            <span class="text-gray-500">utf-8</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-emerald-400">● Modified</span>
+                            <span class="font-mono text-[11px]">LN: 1/11</span>
+                            <span class="text-gray-500">50%</span>
+                        </div>
+                    </div>
+
+                    <!-- Command Line Mock Panel -->
+                    <div class="bg-[#08080c] px-4 py-2 border-t border-white/5 flex items-center gap-1.5 text-xs text-gray-400 font-mono">
+                        <span class="text-brand-400 font-bold">:</span>
+                        <input type="text" id="terminal-input" placeholder="type 'help' or try commands ('skills', 'projects', 'about')..." class="bg-transparent border-none outline-none text-white w-full" autocomplete="off">
+                        <button onclick="handleTerminalCommand()" class="text-brand-400 hover:text-white transition-colors px-1 bg-white/5 hover:bg-white/10 rounded font-sans py-0.5">Run</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="max-w-7xl mx-auto px-6 py-12 border-y border-white/5 relative z-10 bg-darkbg/50">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 bg-gradient-to-r from-brand-400 to-indigo-500 bg-clip-text text-transparent">4+</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold">Active Repositories</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent">3.04</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold">PTIT Software Eng GPA</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 bg-gradient-to-r from-brand-400 to-emerald-400 bg-clip-text text-transparent">1+ Yr</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold">Backend Dev Devoted</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">VNPT</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold">Professional Interning</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech" class="py-24 px-6 max-w-7xl mx-auto scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">Expertise & Technologies</h2>
+                <p class="text-gray-400">A modern list of tools and distributed systems engines I leverage to build robust, fault-tolerant backends.</p>
+            </div>
+
+            <!-- Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Languages & Frameworks -->
+                <div class="glass-card p-8 rounded-2xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 border border-brand-500/20 flex items-center justify-center text-2xl mb-6">💻</div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Languages & Frameworks</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">Spring Boot / Java</span>
+                                <span class="text-xs text-gray-500">Microservices, Event Choreography, Web MVC</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">Django / Python</span>
+                                <span class="text-xs text-gray-500">E-Commerce backends, AI Orchestrators, REST APIs</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">Kotlin / Jetpack Compose</span>
+                                <span class="text-xs text-gray-500">Sleek mobile app interfaces, custom android UI flows</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Databases & Cache -->
+                <div class="glass-card p-8 rounded-2xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-2xl mb-6">🗄️</div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Databases & Vector Storage</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">PostgreSQL / MySQL</span>
+                                <span class="text-xs text-gray-500">Relational modeling, transactions, index optimizations</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">Redis Cache</span>
+                                <span class="text-xs text-gray-500">Distributed lock keys, high-speed cache caching</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">Neo4j & Qdrant</span>
+                                <span class="text-xs text-gray-500">Graph DB node queries, Vector stores for RAG LLM prompts</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Devops & Middleware -->
+                <div class="glass-card p-8 rounded-2xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-6">⚙️</div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Infrastructure & Middleware</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">Docker & Containers</span>
+                                <span class="text-xs text-gray-500">Multi-container Docker Compose configs, microservice builds</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">RabbitMQ Broker</span>
+                                <span class="text-xs text-gray-500">Async event routing, exchange declarations, retry queues</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            <div>
+                                <span class="font-bold text-gray-200 block">Neovim Development (nvim)</span>
+                                <span class="text-xs text-gray-500">Custom Lua plugins, code navigation, high-speed terminal productivity</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects Section -->
+        <section id="projects" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 scroll-mt-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">Selected Projects</h2>
+                    <p class="text-gray-400 max-w-xl">A gallery of backend systems, microservice architectures, and android applications I have built.</p>
+                </div>
+                
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0 bg-[#0f0f16] border border-white/5 p-1.5 rounded-xl text-xs font-semibold">
+                    <button class="px-4 py-2 rounded-lg transition-colors text-white bg-brand-600 filter-btn" onclick="filterProjects('all', this)">All Projects</button>
+                    <button class="px-4 py-2 rounded-lg transition-colors text-gray-400 hover:text-white filter-btn" onclick="filterProjects('spring', this)">Spring Boot</button>
+                    <button class="px-4 py-2 rounded-lg transition-colors text-gray-400 hover:text-white filter-btn" onclick="filterProjects('django', this)">Django/AI</button>
+                    <button class="px-4 py-2 rounded-lg transition-colors text-gray-400 hover:text-white filter-btn" onclick="filterProjects('kotlin', this)">Kotlin Mobile</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+                
+                <!-- Project 1: Order Food Saga -->
+                <div class="group glass-card rounded-2xl overflow-hidden transition-all duration-300 project-card" data-category="spring">
+                    <div class="aspect-video w-full overflow-hidden relative border-b border-white/5 bg-gray-900">
+                        <img src="assets/img/microservices.png" alt="Saga Microservices Dashboard Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-1.5">
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-brand-600 text-white px-2.5 py-1 rounded-md">Spring Boot</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-purple-600 text-white px-2.5 py-1 rounded-md">RabbitMQ</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white">Order Food with Saga Choreography</h3>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            A highly scalable distributed microservice system that manages user food orders. Employs Saga Choreography pattern for event-driven flows and Transactional Outbox pattern to resolve double-writes issues under heavy concurrency.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 font-mono font-bold">Redis • Docker • PostgreSQL</span>
+                            <a href="https://github.com/quangpham10212004" target="_blank" class="text-sm font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                                View Repo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Ecommerce AI Platform -->
+                <div class="group glass-card rounded-2xl overflow-hidden transition-all duration-300 project-card" data-category="django">
+                    <div class="aspect-video w-full overflow-hidden relative border-b border-white/5 bg-gray-900">
+                        <img src="assets/img/ecommerce_ai.png" alt="Ecommerce AI Platform recommendations graph representation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-1.5">
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-emerald-600 text-white px-2.5 py-1 rounded-md">Django</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-cyan-600 text-white px-2.5 py-1 rounded-md">Neo4j</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white">E-Commerce AI platform</h3>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            An AI-powered e-commerce ecosystem incorporating deep-learning LSTM models to analyze user clickstreams for real-time item recommendations. Neo4j tracks products, and a Qdrant-powered RAG chatbot answers customer queries.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 font-mono font-bold">Qdrant • Python • LSTM AI</span>
+                            <a href="https://github.com/quangpham10212004/bookstore_microservice" target="_blank" class="text-sm font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                                View Repo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Laptop Store Mobile App -->
+                <div class="group glass-card rounded-2xl overflow-hidden transition-all duration-300 project-card" data-category="kotlin">
+                    <div class="aspect-video w-full overflow-hidden relative border-b border-white/5 bg-gray-900">
+                        <img src="assets/img/laptop_store.png" alt="Volt Laptop Store Jetpack Compose Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-1.5">
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-orange-600 text-white px-2.5 py-1 rounded-md">Kotlin</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-blue-600 text-white px-2.5 py-1 rounded-md">Compose</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white">Volt Laptop Store App</h3>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            A dual-platform laptop purchasing solution. Built an Android mobile client with Jetpack Compose featuring gorgeous fluid transitions, communicating with a Spring Boot backend database via high-performance REST APIs.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 font-mono font-bold">Android SDK • Spring Boot • MySQL</span>
+                            <a href="https://github.com/quangpham10212004/Laptop_Store_App" target="_blank" class="text-sm font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                                View Repo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Neovim Configuration -->
+                <div class="group glass-card rounded-2xl overflow-hidden transition-all duration-300 project-card" data-category="others">
+                    <div class="aspect-video w-full overflow-hidden relative border-b border-white/5 bg-gray-900">
+                        <img src="assets/img/neovim.png" alt="Aesthetic terminal custom Neovim screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-1.5">
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-purple-600 text-white px-2.5 py-1 rounded-md">Lua</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-zinc-700 text-white px-2.5 py-1 rounded-md">Neovim</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white">Advanced Lua Neovim Config</h3>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            A highly optimized Neovim development workspace tailored for fast programming workflows. Employs lazy-loading plugins, customized tree explorers (nvim-tree), LSP server configs, and rapid fuzzy finding tools.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 font-mono font-bold">Lua • Lazy.nvim • LSP Integration</span>
+                            <a href="https://github.com/quangpham10212004/config-nvim" target="_blank" class="text-sm font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                                View Repo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: ITRMS -->
+                <div class="group glass-card rounded-2xl p-6 transition-all duration-300 project-card" data-category="spring">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-600/10 border border-brand-500/20 flex items-center justify-center text-xl">📋</div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider bg-brand-600 text-white px-2 py-0.5 rounded">Spring Boot</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">ITRMS - Internal Task & Resource Management System</h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        An internal workflow system built to schedule and track employee tasks, resources, and structural units. Features granular RBAC permissions and dynamic performance reports.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-4 mt-2">
+                        <span class="text-xs text-gray-500 font-mono">Java • MySQL • Thymeleaf</span>
+                        <a href="https://github.com/quangpham10212004/ITRMS" target="_blank" class="text-xs font-semibold text-brand-400 hover:underline">GitHub Link &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Bookstore Microservice -->
+                <div class="group glass-card rounded-2xl p-6 transition-all duration-300 project-card" data-category="django">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-600/10 border border-green-500/20 flex items-center justify-center text-xl">📚</div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider bg-green-600 text-white px-2 py-0.5 rounded">Django</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Bookstore Microservices Web</h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        A modern architecture split bookstore separating cart items, catalog search, authentication, and recommendations into self-contained backend nodes using custom Django endpoints.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-4 mt-2">
+                        <span class="text-xs text-gray-500 font-mono">Python • Django REST • Microservices</span>
+                        <a href="https://github.com/quangpham10212004/bookstore_microservice" target="_blank" class="text-xs font-semibold text-brand-400 hover:underline">GitHub Link &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Journey / Experience Section -->
+        <section id="experience" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">Professional Journey</h2>
+                <p class="text-gray-400">My educational background and structural developer work experience timeline.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto relative border-l border-white/10 pl-6 sm:pl-10 space-y-12">
+                <!-- Timeline dot -->
+                <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-brand-500 ring-4 ring-brand-500/20"></div>
+
+                <!-- Exp 1 -->
+                <div class="relative group">
+                    <!-- Glow effect on hover -->
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-[#08080c] border-2 border-brand-500 flex items-center justify-center text-[10px] text-brand-400 font-bold group-hover:bg-brand-500 group-hover:text-white transition-all">💼</div>
+                    
+                    <span class="text-xs text-brand-400 font-bold tracking-widest uppercase">Dec 2024 - Present</span>
+                    <h3 class="text-xl font-bold text-white mt-1">Backend Developer Intern</h3>
+                    <h4 class="text-sm font-semibold text-gray-400">VNPT Media, Hanoi</h4>
+                    
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">
+                        Contributing to internal SaaS and telecommunication apps:
+                    </p>
+                    <ul class="list-disc list-inside text-xs text-gray-500 mt-2 space-y-1 pl-2">
+                        <li>Assisted in designing backend structures for high-volume eSIM configuration managers with Spring Boot.</li>
+                        <li>Implemented message queuing strategies using RabbitMQ to run asynchronous client notifications.</li>
+                        <li>Developed AI pipeline adapters connecting backend microservices with Claude/GPT models for content translation.</li>
+                    </ul>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-[#08080c] border-2 border-purple-500 flex items-center justify-center text-[10px] text-purple-400 font-bold group-hover:bg-purple-500 group-hover:text-white transition-all">🎓</div>
+                    
+                    <span class="text-xs text-purple-400 font-bold tracking-widest uppercase">2022 - 2026 (Expected)</span>
+                    <h3 class="text-xl font-bold text-white mt-1">B.S. in Software Engineering</h3>
+                    <h4 class="text-sm font-semibold text-gray-400">Post and Telecommunications Institute of Technology (PTIT)</h4>
+                    
+                    <div class="flex items-center gap-4 mt-3">
+                        <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded text-gray-300">GPA: <strong class="text-purple-400">3.04 / 4.00</strong></span>
+                        <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded text-gray-300">Class Representative / Active Coding Club member</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">
+                        Studying database structures, cloud computing, operating systems, and OOP paradigms. Consistently translating academic theoretical algorithms into microservice projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 scroll-mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Avatar image left -->
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-2 border-brand-500/30 group shadow-2xl">
+                        <!-- Neon border glow -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-600 to-indigo-600 opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <img src="assets/img/avatar.png" alt="Pham Ngoc Quang abstract developer portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Journey Text Right -->
+                <div class="lg:col-span-8">
+                    <h2 class="text-3xl font-extrabold mb-6 text-white">About My Craftsmanship</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        I am a software engineer focused heavily on the **craftsmanship of backend platforms**. I believe backend development is not just writing APIs, but designing resilience, eventual data consistency, and high-performance communication systems.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        Whether working with **Spring Boot Cloud architectures**, handling message routing inside **RabbitMQ**, modeling recommendations inside **Neo4j**, or fine-tuning database triggers, I seek to write clean, unit-tested, self-documenting code. In my free time, I write custom lua scripts to optimize my terminal-based Neovim environment for maximum keyboard efficiency.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+                            <span class="text-xs uppercase text-gray-500 font-semibold">Core Philosophy</span>
+                            <p class="text-sm text-gray-300 font-bold mt-1">Simple design, complex performance.</p>
+                        </div>
+                        <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+                            <span class="text-xs uppercase text-gray-500 font-semibold">Current Goal</span>
+                            <p class="text-sm text-gray-300 font-bold mt-1">Perfecting event-driven microservices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 scroll-mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Left -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">Let's Connect</h2>
+                        <p class="text-gray-400 leading-relaxed mb-8">
+                            Are you looking for an eager Backend developer who is comfortable with Java ecosystems, databases, and microservices? Send me a line or connect through my links.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <a href="mailto:qpquangpham10212004@gmail.com" class="flex items-center gap-4 group p-4 bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-brand-500/25 rounded-2xl transition-all">
+                            <div class="w-11 h-11 rounded-xl bg-brand-600/10 border border-brand-500/20 flex items-center justify-center text-brand-400 text-lg group-hover:scale-110 transition-transform">✉️</div>
+                            <div>
+                                <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Email Address</span>
+                                <span class="text-sm font-semibold text-gray-200">qpquangpham10212004@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/qnp211004" target="_blank" class="flex items-center gap-4 group p-4 bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-brand-500/25 rounded-2xl transition-all">
+                            <div class="w-11 h-11 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-lg group-hover:scale-110 transition-transform">🔗</div>
+                            <div>
+                                <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">LinkedIn</span>
+                                <span class="text-sm font-semibold text-gray-200">Pham Ngoc Quang</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Right -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" onsubmit="submitForm(event)" class="glass-card p-8 rounded-2xl flex flex-col gap-6 relative">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="flex flex-col">
+                                <label for="name" class="text-xs text-gray-400 font-bold mb-2 uppercase">Your Name</label>
+                                <input type="text" id="name" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:bg-white/[0.08] transition-all text-sm">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="email" class="text-xs text-gray-400 font-bold mb-2 uppercase">Email Address</label>
+                                <input type="email" id="email" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:bg-white/[0.08] transition-all text-sm">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="message" class="text-xs text-gray-400 font-bold mb-2 uppercase">Message Content</label>
+                            <textarea id="message" rows="5" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:bg-white/[0.08] transition-all text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-brand-600/20 hover:shadow-brand-600/30 flex items-center justify-center gap-2">
+                            <span>Send Message</span> <span>⚡</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-[#07070a]/90 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2.5">
+                <span class="w-6.5 h-6.5 rounded-md bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center font-bold text-xs text-white">Q</span>
+                <span class="text-lg font-bold tracking-tight text-white">Quang.Dev</span>
+            </div>
+            
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#tech" class="hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="https://github.com/quangpham10212004" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+            </div>
+            
+            <div class="text-xs text-gray-500 font-medium">
+                © 2026 Pham Ngoc Quang • Handcrafted with Spring, Django, and nvim
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Widget (Initially hidden) -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-card px-5 py-4 rounded-2xl flex items-center gap-3 border border-emerald-500/30 shadow-2xl transition-all duration-500 translate-y-24 opacity-0 pointer-events-none">
+        <span class="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-xs text-emerald-400">✓</span>
+        <div>
+            <div class="text-xs text-gray-200 font-bold">Message Simulation Success!</div>
+            <div class="text-[10px] text-gray-400">Your message has been simulated. Thank you!</div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // File system contents for mock terminal
+        const files = {
+            'about.lua': 
+`local developer = {
+  name = "Pham Ngoc Quang",
+  role = "Backend Developer Intern",
+  company = "VNPT Media",
+  university = "PTIT (GPA: 3.04)",
+  specialties = { 
+    "Spring Boot", 
+    "Microservices", 
+    "AI Integration" 
+  },
+  location = "Hanoi, Vietnam"
+}
+
+return developer`,
+
+            'journey.txt': 
+`[VNPT Media] - Backend Developer Intern
+(December 2024 - Present)
+----------------------------------------
+• Developed internal eSIM platforms in Spring Boot.
+• Declared AMQP exchanges & queues via RabbitMQ.
+• Handled REST adapters linking services with Claude.
+
+[PTIT University] - BS in Software Engineering
+(2022 - 2026 Expected)
+----------------------------------------
+• GPA: 3.04 / 4.00
+• Core Modules: Distributed Networks, OOP Patterns,
+  Database Indexing, Data Structures.`,
+
+            'featured.json': 
+`[
+  {
+    "name": "Order Food with Saga",
+    "pattern": "Saga Choreography",
+    "broker": "RabbitMQ",
+    "backend": "Spring Boot"
+  },
+  {
+    "name": "Ecommerce AI Recommendations",
+    "recommendation": "LSTM Clickstream",
+    "vectors": "Qdrant Vector DB",
+    "framework": "Django"
+  }
+]`,
+
+            'other.json': 
+`[
+  {
+    "name": "ITRMS Work Manager",
+    "type": "Java Enterprise Task tool",
+    "repo": "github.com/quangpham10212004/ITRMS"
+  },
+  {
+    "name": "bookstore_microservice",
+    "type": "Django REST Microservices catalog",
+    "repo": "github.com/quangpham10212004/bookstore_microservice"
+  }
+]`,
+
+            'backend.yaml': 
+`languages:
+  - Java (Spring Boot / MVC framework)
+  - Python (Django / FastAPI engines)
+  - Kotlin (Jetpack Compose layout)
+
+databases:
+  - PostgreSQL & MySQL (RDBMS transactional)
+  - Redis (Caching keys / session locking)
+  - Neo4j (Graph data linking relationships)
+  - Qdrant (High speed AI embeddings repository)`,
+
+            'tools.md': 
+`# Dev & Terminal Productivity Tools
+
+* **Docker & Docker Compose** for container networks
+* **RabbitMQ Message Broker** for event dispatching
+* **Git & GitHub Workflows**
+* **Neovim (nvim)** - Custom Lua LSP configurations`
+        };
+
+        // File extensions and highlighting mapper
+        function formatCodeContent(fileName, text) {
+            if (fileName.endsWith('.lua')) {
+                return text
+                    .replace(/(local|return)/g, '<span class="text-pink-500 font-bold">$1</span>')
+                    .replace(/(developer|name|role|company|university|specialties|location)/g, '<span class="text-blue-400">$1</span>')
+                    .replace(/(".*?")/g, '<span class="text-emerald-400">$1</span>');
+            } else if (fileName.endsWith('.json')) {
+                return text
+                    .replace(/(".*?")\s*:/g, '<span class="text-purple-400 font-medium">$1</span>:')
+                    .replace(/:\s*(".*?")/g, ': <span class="text-emerald-400">$1</span>');
+            } else if (fileName.endsWith('.yaml')) {
+                return text
+                    .replace(/([a-zA-Z0-9_-]+):/g, '<span class="text-cyan-400 font-semibold">$1:</span>')
+                    .replace(/(Spring Boot|Django|FastAPI|Jetpack Compose|PostgreSQL|MySQL|Redis|Neo4j|Qdrant)/g, '<span class="text-yellow-400 font-medium">$1</span>');
+            } else if (fileName.endsWith('.md')) {
+                return text
+                    .replace(/(#+ .*)/g, '<span class="text-amber-500 font-bold">$1</span>')
+                    .replace(/(\*\*.*?\*\*)/g, '<span class="text-sky-400 font-semibold">$1</span>');
+            } else if (fileName.endsWith('.txt')) {
+                return text
+                    .replace(/(\[.*?\])/g, '<span class="text-sky-400 font-bold">$1</span>')
+                    .replace(/(GPA: 3.04 \/ 4.00)/g, '<span class="text-amber-400 font-bold">$1</span>');
+            }
+            return text;
+        }
+
+        // State Manager for Neovim Widget
+        let currentFile = 'about.lua';
+
+        function openFile(fileName) {
+            currentFile = fileName;
+            
+            // Highlight active sidebar item
+            const buttons = document.querySelectorAll('.active-file-btn');
+            buttons.forEach(btn => {
+                const nameNode = btn.querySelector('span:last-child').innerText;
+                if (nameNode === fileName) {
+                    btn.classList.add('bg-white/10', 'text-white');
+                    btn.classList.remove('text-gray-400');
+                } else {
+                    btn.classList.remove('bg-white/10', 'text-white');
+                    btn.classList.add('text-gray-400');
+                }
+            });
+
+            // Update tab title and filename status
+            document.getElementById('tab-title').innerText = fileName;
+            document.getElementById('current-filename').innerText = `info/${fileName}`;
+
+            // Populate lines
+            const content = files[fileName];
+            const codeContainer = document.getElementById('code-content');
+            codeContainer.innerHTML = formatCodeContent(fileName, content);
+
+            // Populate line numbers
+            const lineCount = content.split('\n').length;
+            const lineNumbersCol = document.getElementById('line-numbers');
+            let numHtml = '';
+            for (let i = 1; i <= lineCount; i++) {
+                numHtml += `<div>${i}</div>`;
+            }
+            lineNumbersCol.innerHTML = numHtml;
+            
+            // Scroll editor top
+            codeContainer.scrollTop = 0;
+        }
+
+        // Mock Terminal Command Execution
+        function handleTerminalCommand() {
+            const input = document.getElementById('terminal-input');
+            const cmd = input.value.trim().toLowerCase();
+            input.value = '';
+
+            if (cmd === 'help') {
+                alert(`Interactive commands available:\n\n` + 
+                      `• about    : Load info/about.lua file\n` +
+                      `• skills   : Load skills/backend.yaml file\n` +
+                      `• projects : Load projects/featured.json file\n` +
+                      `• clear    : Close current active pane\n` +
+                      `• nvim     : Reset standard layout`);
+            } else if (cmd === 'about') {
+                openFile('about.lua');
+            } else if (cmd === 'skills') {
+                openFile('backend.yaml');
+            } else if (cmd === 'projects') {
+                openFile('featured.json');
+            } else if (cmd === 'clear') {
+                document.getElementById('code-content').innerHTML = '<span class="text-gray-600">Terminal buffer cleared. Press one of the file tabs in workspace sidebar...</span>';
+                document.getElementById('line-numbers').innerHTML = '<div>~</div>';
+                document.getElementById('tab-title').innerText = 'Terminal';
+                document.getElementById('current-filename').innerText = 'shell';
+            } else if (cmd === 'nvim') {
+                openFile('about.lua');
+            } else {
+                alert(`Unknown command: "${cmd}". Type "help" to see valid commands.`);
+            }
+        }
+
+        // Enter key listner for command box
+        document.getElementById('terminal-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleTerminalCommand();
+            }
+        });
+
+        // Filter projects grid
+        function filterProjects(category, btnElement) {
+            // Remove active states on tags
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white');
+                btn.classList.add('text-gray-400', 'hover:text-white');
+            });
+
+            // Add active status to clicked button
+            btnElement.classList.add('bg-brand-600', 'text-white');
+            btnElement.classList.remove('text-gray-400', 'hover:text-white');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const itemCategory = card.getAttribute('data-category');
+                
+                if (category === 'all' || itemCategory === category || 
+                    (category === 'spring' && itemCategory === 'spring') || 
+                    (category === 'django' && itemCategory === 'django') || 
+                    (category === 'kotlin' && itemCategory === 'kotlin')) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact Form Simulation Toast
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Clear inputs
+            document.getElementById('contact-form').reset();
+
+            // Trigger visual toast
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+            
+            // Hide after 4 seconds
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+            }, 4000);
+        }
+
+        // Mobile Nav Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                // 'X' icon
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        // Sticky Nav logic on scroll
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                nav.classList.add('bg-darkbg/95', 'py-3.5', 'border-b', 'border-white/10');
+                nav.classList.remove('bg-darkbg/70', 'py-4', 'border-b-transparent');
+            } else {
+                nav.classList.add('bg-darkbg/70', 'py-4');
+                nav.classList.remove('bg-darkbg/95', 'py-3.5', 'border-white/10');
+            }
+        });
+
+        // Initialize editor default load
+        openFile('about.lua');
+    </script>
+</body>
+</html>
