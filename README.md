@@ -4,7 +4,7 @@ This is my personal portfolio website built with Jekyll and hosted on GitHub Pag
 
 ## About
 
-I'm an intern backend developer at VNPT Media, specializing in Spring Boot and microservices.
+I'm an intern backend developer at VPBank, specializing in Spring Boot and microservices.
 
 ## Projects
 
