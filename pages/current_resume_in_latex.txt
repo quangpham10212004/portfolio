@@ -125,7 +125,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Posts and Telecommunications Institute of Technology}{Ha Noi}
-      {Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0}{Aug. 2022 -- Present}
+      {Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0}{Aug. 2022 -- April 2027}
   \resumeSubHeadingListEnd
 
 

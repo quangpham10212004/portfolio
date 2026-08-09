@@ -55,7 +55,7 @@
                 <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary to-accent flex items-center justify-center font-display font-extrabold text-white text-lg shadow-md group-hover:scale-105 transition-transform">Q</span>
                 <div class="flex flex-col">
                     <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">QUANG.DEV</span>
-                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Software Developer</span>
+                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Junior Software Engineer</span>
                 </div>
             </a>
 
@@ -217,10 +217,11 @@
             }
         }
 
+        // Default theme is LIGHT mode
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
-        } else if (localStorage.getItem('theme') === 'light') {
+        } else {
             document.documentElement.classList.remove('dark');
             document.documentElement.classList.add('light');
         }

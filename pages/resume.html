@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume / CV - Pham Ngoc Quang</title>
-    <meta name="description" content="Resume of Pham Ngoc Quang - Software Developer @ VNPT Media | PTIT Alumni.">
+    <meta name="description" content="Resume of Pham Ngoc Quang - Junior Software Engineer @ VPBank | PTIT Alumni.">
     
     <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +60,7 @@
                 <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary to-accent flex items-center justify-center font-display font-extrabold text-white text-lg shadow-md group-hover:scale-105 transition-transform">Q</span>
                 <div class="flex flex-col">
                     <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">QUANG.DEV</span>
-                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Software Developer</span>
+                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Junior Software Engineer</span>
                 </div>
             </a>
 
@@ -142,17 +142,36 @@
                         <p class="text-xs font-mono text-slate-600 dark:text-slate-300">Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0</p>
                     </div>
                     <div class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">
-                        Ha Noi | Aug. 2022 – Present
+                        Ha Noi | Aug. 2022 – April 2027
                     </div>
                 </div>
             </section>
 
             <!-- Experience -->
-            <section class="space-y-4">
+            <section class="space-y-6">
                 <h2 class="font-display font-bold text-lg uppercase tracking-wider text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-1">
                     Experience
                 </h2>
 
+                <!-- VPBank -->
+                <div class="space-y-2">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">VPBank</h3>
+                            <p class="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">Junior Software Engineer (VPBank Young Talent Program)</p>
+                        </div>
+                        <div class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">
+                            August 2026 – Present
+                        </div>
+                    </div>
+
+                    <ul class="list-disc list-outside ml-5 space-y-1 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <li>Selected and passed the VPBank Young Talent program.</li>
+                        <li>Developing high-availability banking microservices, financial transaction processing platforms, and resilient backend systems.</li>
+                    </ul>
+                </div>
+
+                <!-- VNPT Media -->
                 <div class="space-y-3">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                         <div>
@@ -160,7 +179,7 @@
                             <p class="text-xs font-mono font-semibold text-secondary dark:text-accent">Software Developer</p>
                         </div>
                         <div class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">
-                            March 2026 – Present
+                            March 2026 – August 2026
                         </div>
                     </div>
 
@@ -168,7 +187,7 @@
                         <li>Developed <strong>Docdev</strong>, a multi-tenant AI-powered document management SaaS platform using Spring Boot microservices, <strong>Redis, RabbitMQ</strong>.</li>
                         <li>Designed an event-driven notification service that subscribes to a <strong>RabbitMQ</strong> topic exchange, routes typed domain events (task assignment, document review/approval, billing alerts) into per-tenant notification storage, and serves them via a paginated <strong>REST API</strong> with unread-count and bulk-read endpoints.</li>
                         <li>Developed document collaboration features including versioning, tasks, checklists, groups, permissions, dashboards, activity tracking, and DOCX export.</li>
-                        <li>Developed backend modules for an eSIM purchasing platform, including order management, payment processing, and SIM provisioning; applied <strong>optimistic locking (@Version)</strong> to prevent race conditions on concurrent order approval and batch serial validation to eliminate per-row duplicate checks.</li>
+                        <li>Developed backend modules for an <strong class="text-slate-900 dark:text-white font-bold">eSIM purchasing platform</strong>, including order management, payment processing, and SIM provisioning; applied <strong>optimistic locking (@Version)</strong> to prevent race conditions on concurrent order approval and batch serial validation to eliminate per-row duplicate checks.</li>
                         <li>Optimized database queries by resolving N+1 issues via <strong>@EntityGraph eager loading</strong> and implementing <strong>keyset pagination</strong>; improved response time using Spring <strong>@Async</strong>.</li>
                     </ul>
                 </div>
@@ -226,7 +245,7 @@
         <div id="latex-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm p-4 overflow-y-auto flex items-center justify-center">
             <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 space-y-4 text-slate-100 shadow-2xl">
                 <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                    <h3 class="font-display font-bold text-lg text-white">LaTeX Resume Source (current_resume_in_latex.txt)</h3>
+                    <h3 class="font-display font-bold text-lg text-white">LaTeX Resume Source</h3>
                     <button onclick="toggleLatexModal()" class="text-slate-400 hover:text-white">
                         <span class="material-symbols-outlined">close</span>
                     </button>
@@ -252,26 +271,33 @@
     \small +84 945211004 $|$ \href{mailto:qpquangpham10212004@gmail.com}{\underline{qpquangpham10212004@gmail.com}} $|$ 
     \href{https://linkedin.com/in/qnp211004}{\underline{linkedin.com/in/qnp211004}} $|$
     \href{https://github.com/quangpham10212004}{\underline{github.com/quangpham10212004}}
-    \href{https://quangpham10212004.github.io/portfolio/}{Portfolio: quangpham10212004.github.io/portfolio}
-\end{center}
+\end{center>
 
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {Posts and Telecommunications Institute of Technology}{Ha Noi}
-      {Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0}{Aug. 2022 -- Present}
+      {Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0}{Aug. 2022 -- April 2027}
   \resumeSubHeadingListEnd
 
 \section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {VNPT Media}{March 2026 -- Present}
+      {VPBank}{August 2026 -- Present}
+      {Junior Software Engineer (VPBank Young Talent Program)}{}
+      \resumeItemListStart
+        \resumeItem{Selected and passed VPBank Young Talent Program.}
+        \resumeItem{Developing high-availability banking microservices, financial transaction processing platforms, and resilient backend systems.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {VNPT Media}{March 2026 -- August 2026}
       {Software Developer}{}
       \resumeItemListStart
         \resumeItem{Developed Docdev, a multi-tenant AI-powered document management SaaS platform using Spring Boot microservices, Redis, RabbitMQ.}
         \resumeItem{Designed an event-driven notification service that subscribes to a RabbitMQ topic exchange, routes typed domain events into per-tenant notification storage, and serves them via a paginated REST API.}
         \resumeItem{Developed document collaboration features including versioning, tasks, checklists, groups, permissions, dashboards, activity tracking, and DOCX export.}
-        \resumeItem{Developed backend modules for an eSIM purchasing platform, including order management, payment processing, and SIM provisioning; applied optimistic locking (@Version) and batch serial validation.}
+        \resumeItem{Developed backend modules for an \textbf{eSIM purchasing platform}, including order management, payment processing, and SIM provisioning; applied optimistic locking (@Version) and batch serial validation.}
         \resumeItem{Optimized database queries by resolving N+1 issues via @EntityGraph eager loading and implementing keyset pagination; improved response time using Spring @Async.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
@@ -349,10 +375,11 @@
             }
         }
 
+        // Default theme is LIGHT mode
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
-        } else if (localStorage.getItem('theme') === 'light') {
+        } else {
             document.documentElement.classList.remove('dark');
             document.documentElement.classList.add('light');
         }

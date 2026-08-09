@@ -60,7 +60,7 @@
                 <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary to-accent flex items-center justify-center font-display font-extrabold text-white text-lg shadow-md group-hover:scale-105 transition-transform">Q</span>
                 <div class="flex flex-col">
                     <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">QUANG.DEV</span>
-                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Software Developer</span>
+                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Junior Software Engineer</span>
                 </div>
             </a>
 
@@ -94,19 +94,18 @@
         <div class="space-y-6">
             <div class="space-y-3">
                 <h1 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white tracking-tight">
-                    Featured Projects
+                    Featured Open-Source Projects
                 </h1>
                 <p class="text-slate-600 dark:text-slate-400 text-lg max-w-3xl">
-                    Distributed systems, microservices architectures, saga orchestration, and backend platforms built with clean code and high performance.
+                    Distributed systems, microservices architectures, saga orchestration, and backend platforms with public repositories.
                 </p>
             </div>
 
             <!-- Filter Buttons -->
             <div class="flex flex-wrap gap-2.5 pt-2" id="filter-buttons">
                 <button onclick="filterProjects('all', this)" class="filter-btn active px-4 py-2 rounded-xl bg-secondary text-white font-mono text-xs font-bold transition-all">All Projects</button>
-                <button onclick="filterProjects('saga', this)" class="filter-btn px-4 py-2 rounded-xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 font-mono text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Saga & Distributed</button>
+                <button onclick="filterProjects('saga', this)" class="filter-btn px-4 py-2 rounded-xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 font-mono text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Saga & Microservices</button>
                 <button onclick="filterProjects('spring', this)" class="filter-btn px-4 py-2 rounded-xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 font-mono text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Spring Boot</button>
-                <button onclick="filterProjects('saas', this)" class="filter-btn px-4 py-2 rounded-xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 font-mono text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">SaaS Platform</button>
             </div>
         </div>
 
@@ -221,46 +220,6 @@
                 </div>
             </article>
 
-            <!-- Project 3: Docdev AI Document SaaS Platform -->
-            <article class="project-card saas spring p-8 rounded-2xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-6 hover:border-indigo-400 dark:hover:border-indigo-600 transition-all group">
-                <div class="space-y-4">
-                    <div class="flex items-start justify-between gap-4">
-                        <div>
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 font-mono text-[11px] font-bold uppercase tracking-wider">Multi-Tenant SaaS (VNPT)</span>
-                            <h2 class="font-display font-bold text-2xl text-slate-900 dark:text-white group-hover:text-secondary dark:group-hover:text-accent transition-colors mt-2">
-                                Docdev SaaS Platform
-                            </h2>
-                        </div>
-                    </div>
-
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Developed Docdev, a multi-tenant AI-powered document management SaaS platform built with Spring Boot microservices, Redis, and RabbitMQ event-driven notifications.
-                    </p>
-
-                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
-                        <li class="flex items-start gap-2">
-                            <span class="text-secondary font-bold">•</span>
-                            <span>Event-driven notification service subscribing to RabbitMQ topic exchange, per-tenant notification storage, paginated REST API, unread count & bulk read.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-secondary font-bold">•</span>
-                            <span>Document collaboration: versioning, tasks, checklists, permissions, dashboards, activity tracking, DOCX export.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="pt-4 border-t border-border-color dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium">Spring Boot</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium">Redis</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium">RabbitMQ</span>
-                        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium">PostgreSQL</span>
-                    </div>
-
-                    <span class="text-xs font-mono font-bold text-slate-400">Production SaaS</span>
-                </div>
-            </article>
-
         </div>
 
     </main>
@@ -285,16 +244,13 @@
 
     <script>
         function filterProjects(category, btnElement) {
-            // Remove active style from all filter buttons
             const buttons = document.querySelectorAll('#filter-buttons button');
             buttons.forEach(b => {
                 b.className = "filter-btn px-4 py-2 rounded-xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 font-mono text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all";
             });
 
-            // Set active button style
             btnElement.className = "filter-btn active px-4 py-2 rounded-xl bg-secondary text-white font-mono text-xs font-bold transition-all";
 
-            // Filter cards
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
                 if (category === 'all' || card.classList.contains(category)) {
@@ -317,10 +273,11 @@
             }
         }
 
+        // Default theme is LIGHT mode
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
-        } else if (localStorage.getItem('theme') === 'light') {
+        } else {
             document.documentElement.classList.remove('dark');
             document.documentElement.classList.add('light');
         }
