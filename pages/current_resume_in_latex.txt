@@ -1,0 +1,215 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Pham Ngoc Quang} \\ \vspace{1pt}
+    \small +84 945211004 $|$ \href{mailto:qpquangpham10212004@gmail.com}{\underline{qpquangpham10212004@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/qnp211004}{\underline{linkedin.com/in/qnp211004}} $|$
+    \href{https://github.com/quangpham10212004}{\underline{github.com/quangpham10212004}}
+    \href{https://quangpham10212004.github.io/portfolio/}{Portfolio: quangpham10212004.github.io/portfolio}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Posts and Telecommunications Institute of Technology}{Ha Noi}
+      {Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0}{Aug. 2022 -- Present}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {VNPT Media}{March 2026 -- Present}
+      {Software Developer}{}
+      \resumeItemListStart
+      \resumeItem{Developed Docdev, a multi-tenant AI-powered document management SaaS platform using Spring Boot microservices, \textbf{Redis, RabbitMQ}.}
+        \resumeItem{Designed an event-driven notification service that subscribes
+  to a \textbf{RabbitMQ} topic exchange, routes typed domain events (task assignment,
+  document review/approval, billing alerts) into per-tenant notification
+  storage, and serves them via a paginated \textbf{REST API} with unread-count and
+  bulk-read endpoints.
+}
+        \resumeItem{Developed document collaboration features including versioning, tasks, checklists, groups, permissions, dashboards, activity tracking, and DOCX export.}
+        \resumeItem{Developed backend modules for an eSIM purchasing platform, including order
+  management, payment processing, and SIM provisioning; applied \textbf{optimistic
+  locking (@Version)} to prevent race conditions on concurrent order approval and
+  batch serial validation to eliminate per-row duplicate checks..}
+        \resumeItem{ Optimized database queries by resolving N+1 issues via \textbf{@EntityGraph eager
+  loading} and implementing \textbf{keyset pagination}; improved response time using
+  Spring @Async.}
+        
+        \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{Order Food With Saga Pattern}}{}
+          \resumeItemListStart
+            \resumeItem{Developed a microservices-based Food Delivery Place Order module using
+\textbf{Saga Choreography} and the \textbf{Outbox Pattern} to manage distributed
+transactions across Order, Payment, and Delivery services.}
+            \resumeItem{Implemented core flows including order creation, payment processing/
+refund, driver assignment, API Gateway routing, and real-time end-to-end
+demo of happy-path and rollback scenarios.}
+            \resumeItem{Built the system with Spring Boot services,\textbf{ RabbitMQ }event-driven
+messaging, database-per-service with MySQL, Docker Compose
+orchestration, and a React frontend for order flow visualization and API
+queries.}
+            \resumeItem{Github: https://github.com/quangpham10212004/OrderFoodModule⁠}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Shop Electronic products using Spring Boot}}{}
+          \resumeItemListStart
+            \resumeItem{Implemented foundational business flows including user management, product management, order creation, order lookup, and product availability validation through synchronous service-to-service communication}
+            \resumeItem{Implemented core commerce flows including user CRUD, product CRUD, order creation, order lookup, and product availability validation via OpenFeign between Order and Product services.}
+            \resumeItem{Github: https://github.com/quangpham10212004/Shop-Ecommerce-SpringBoot}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Frameworks}{: SpringBoot, Django} \\
+     \textbf{Databases}{: PostgreSQL, MySQL, MongoDB, Redis} \\
+     \textbf{Microservices}{: Spring Cloud, Netflix Eureka, RabbitMQ} \\
+     \textbf{Developer Tools}{: Git, GitHub, Docker, Redis, Linux, RabbitMQ, Kafka, Maven, Postman} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

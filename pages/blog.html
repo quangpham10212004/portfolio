@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Blog & Architecture Notes - Pham Ngoc Quang</title>
+    <meta name="description" content="Technical articles on Spring Boot, Microservices, Saga Pattern, RabbitMQ, and Backend Performance Optimization by Pham Ngoc Quang.">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0f172a",
+                        secondary: "#4f46e5",
+                        "secondary-hover": "#4338ca",
+                        accent: "#06b6d4",
+                        surface: "#f8fafc",
+                        "surface-card": "#ffffff",
+                        "on-surface": "#1e293b",
+                        "on-surface-muted": "#64748b",
+                        "border-color": "#e2e8f0"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased min-h-screen flex flex-col dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-border-color/60 bg-surface/80 dark:bg-slate-900/80 glass-header transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary to-accent flex items-center justify-center font-display font-extrabold text-white text-lg shadow-md group-hover:scale-105 transition-transform">Q</span>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">QUANG.DEV</span>
+                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Software Developer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-display text-sm font-bold tracking-wide">
+                <a href="../index.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">HOME</a>
+                <a href="work.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">WORK</a>
+                <a href="projects.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">PROJECTS</a>
+                <a href="resume.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">RESUME</a>
+                <a href="blog.html" class="text-secondary dark:text-accent border-b-2 border-secondary dark:border-accent pb-1">BLOG</a>
+            </nav>
+
+            <!-- Utility Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+                </button>
+                <a href="https://github.com/quangpham10212004" target="_blank" rel="noopener" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-display text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-700 transition-all shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-12">
+        
+        <!-- Header -->
+        <div class="space-y-4">
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white tracking-tight">
+                Architecture & Engineering Notes
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">
+                Thoughts, patterns, and practical guides on microservices, event-driven architectures, and database optimizations.
+            </p>
+        </div>
+
+        <!-- Article List -->
+        <div class="space-y-8">
+            
+            <!-- Article 1 -->
+            <article class="p-8 rounded-2xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 shadow-sm space-y-4 hover:border-indigo-400 dark:hover:border-indigo-600 transition-all">
+                <div class="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <span class="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 text-secondary dark:text-indigo-300 font-bold">Microservices</span>
+                    <span>•</span>
+                    <span>August 2026</span>
+                    <span>•</span>
+                    <span>6 min read</span>
+                </div>
+
+                <h2 class="font-display font-bold text-2xl text-slate-900 dark:text-white hover:text-secondary dark:hover:text-accent transition-colors">
+                    Designing Saga Choreography and Outbox Pattern in Spring Boot
+                </h2>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    A deep dive into managing distributed transactions across independent microservices without two-phase commit (2PC) or global locks. Learn how combining Saga Choreography with the Outbox Pattern guarantees at-least-once message delivery and atomic state transitions even during system failures.
+                </p>
+
+                <div class="flex items-center justify-between pt-2">
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-500">
+                        <span>#SpringBoot</span>
+                        <span>#SagaPattern</span>
+                        <span>#OutboxPattern</span>
+                        <span>#RabbitMQ</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="p-8 rounded-2xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 shadow-sm space-y-4 hover:border-indigo-400 dark:hover:border-indigo-600 transition-all">
+                <div class="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <span class="px-2.5 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-300 font-bold">Event-Driven</span>
+                    <span>•</span>
+                    <span>July 2026</span>
+                    <span>•</span>
+                    <span>5 min read</span>
+                </div>
+
+                <h2 class="font-display font-bold text-2xl text-slate-900 dark:text-white hover:text-secondary dark:hover:text-accent transition-colors">
+                    Multi-Tenant Notification Routing with RabbitMQ Topic Exchanges
+                </h2>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    How we architected a scalable, multi-tenant notification engine for Docdev SaaS. Covers topic exchange routing keys, tenant-scoped storage, and serving paginated notification feeds with real-time unread badges.
+                </p>
+
+                <div class="flex items-center justify-between pt-2">
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-500">
+                        <span>#RabbitMQ</span>
+                        <span>#MultiTenancy</span>
+                        <span>#SaaS</span>
+                        <span>#RESTAPI</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="p-8 rounded-2xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 shadow-sm space-y-4 hover:border-indigo-400 dark:hover:border-indigo-600 transition-all">
+                <div class="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-300 font-bold">Database</span>
+                    <span>•</span>
+                    <span>June 2026</span>
+                    <span>•</span>
+                    <span>4 min read</span>
+                </div>
+
+                <h2 class="font-display font-bold text-2xl text-slate-900 dark:text-white hover:text-secondary dark:hover:text-accent transition-colors">
+                    Eliminating JPA Bottlenecks: Keyset Pagination & @EntityGraph
+                </h2>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    Practical techniques to boost Spring Boot database performance. We explore replacing slow SQL <code class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded text-xs font-mono">OFFSET</code> queries with efficient keyset pagination and using Spring Data JPA <code class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded text-xs font-mono">@EntityGraph</code> to completely eliminate N+1 select queries.
+                </p>
+
+                <div class="flex items-center justify-between pt-2">
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-500">
+                        <span>#PostgreSQL</span>
+                        <span>#JPA</span>
+                        <span>#Hibernate</span>
+                        <span>#Performance</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border-color dark:border-slate-800 bg-surface-card dark:bg-slate-900 py-10 transition-colors mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-secondary text-white font-display font-extrabold text-sm flex items-center justify-center">Q</span>
+                <span class="font-display font-bold text-slate-900 dark:text-white text-sm">Pham Ngoc Quang</span>
+                <span class="text-xs text-slate-400 font-mono">© 2026 • All Rights Reserved</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs font-mono text-slate-500 dark:text-slate-400">
+                <a href="https://github.com/quangpham10212004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/qnp211004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">LinkedIn</a>
+                <a href="mailto:qpquangpham10212004@gmail.com" class="hover:text-secondary dark:hover:text-accent transition-colors">Email</a>
+                <a href="resume.html" class="hover:text-secondary dark:hover:text-accent transition-colors">CV</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    </script>
+</body>
+</html>

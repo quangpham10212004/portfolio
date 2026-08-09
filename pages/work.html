@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience & Education - Pham Ngoc Quang</title>
+    <meta name="description" content="Professional work experience and education timeline of Pham Ngoc Quang - Software Developer at VNPT Media.">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0f172a",
+                        secondary: "#4f46e5",
+                        "secondary-hover": "#4338ca",
+                        accent: "#06b6d4",
+                        surface: "#f8fafc",
+                        "surface-card": "#ffffff",
+                        "on-surface": "#1e293b",
+                        "on-surface-muted": "#64748b",
+                        "border-color": "#e2e8f0"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased min-h-screen flex flex-col dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-border-color/60 bg-surface/80 dark:bg-slate-900/80 glass-header transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary to-accent flex items-center justify-center font-display font-extrabold text-white text-lg shadow-md group-hover:scale-105 transition-transform">Q</span>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">QUANG.DEV</span>
+                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Software Developer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-display text-sm font-bold tracking-wide">
+                <a href="../index.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">HOME</a>
+                <a href="work.html" class="text-secondary dark:text-accent border-b-2 border-secondary dark:border-accent pb-1">WORK</a>
+                <a href="projects.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">PROJECTS</a>
+                <a href="resume.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">RESUME</a>
+                <a href="blog.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">BLOG</a>
+            </nav>
+
+            <!-- Utility Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+                </button>
+                <a href="https://github.com/quangpham10212004" target="_blank" rel="noopener" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-display text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-700 transition-all shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-12">
+        
+        <!-- Header Title -->
+        <div class="space-y-4 text-center md:text-left">
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white tracking-tight">
+                Work Experience & Education
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">
+                A timeline of my professional journey in software engineering, backend microservices development, and computer science education.
+            </p>
+        </div>
+
+        <!-- Experience Timeline Container -->
+        <div class="relative pl-6 md:pl-8 border-l-2 border-indigo-200 dark:border-slate-800 space-y-12 my-8">
+            
+            <!-- Timeline Item 1: VNPT Media -->
+            <div class="relative group">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-[31px] md:-left-[39px] top-1 w-5 h-5 rounded-full bg-secondary border-4 border-surface dark:border-slate-950 shadow-md group-hover:scale-125 transition-transform"></div>
+
+                <!-- Card Content -->
+                <div class="p-6 md:p-8 rounded-2xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 shadow-sm space-y-6">
+                    <!-- Card Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border-color dark:border-slate-800 pb-4">
+                        <div>
+                            <h2 class="font-display font-bold text-2xl text-slate-900 dark:text-white flex items-center gap-3">
+                                <span>VNPT Media</span>
+                                <span class="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 text-secondary dark:text-indigo-300 font-mono text-xs font-semibold">Current</span>
+                            </h2>
+                            <p class="text-base font-semibold text-secondary dark:text-accent font-mono mt-0.5">Software Developer</p>
+                        </div>
+                        <div class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg w-fit">
+                            March 2026 – Present
+                        </div>
+                    </div>
+
+                    <!-- Description Bullet Points -->
+                    <ul class="space-y-3 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="text-secondary font-bold text-base">•</span>
+                            <span>Developed <strong class="text-slate-900 dark:text-white font-semibold">Docdev</strong>, a multi-tenant AI-powered document management SaaS platform using Spring Boot microservices, <strong class="text-slate-900 dark:text-white font-semibold">Redis, and RabbitMQ</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-secondary font-bold text-base">•</span>
+                            <span>Designed an event-driven notification service that subscribes to a <strong class="text-slate-900 dark:text-white font-semibold">RabbitMQ topic exchange</strong>, routes typed domain events (task assignment, document review/approval, billing alerts) into per-tenant notification storage, and serves them via a paginated REST API with unread-count and bulk-read endpoints.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-secondary font-bold text-base">•</span>
+                            <span>Developed document collaboration features including versioning, tasks, checklists, groups, permissions, dashboards, activity tracking, and DOCX export.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-secondary font-bold text-base">•</span>
+                            <span>Developed backend modules for an eSIM purchasing platform, including order management, payment processing, and SIM provisioning; applied <strong class="text-slate-900 dark:text-white font-semibold">optimistic locking (@Version)</strong> to prevent race conditions on concurrent order approval and batch serial validation to eliminate per-row duplicate checks.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-secondary font-bold text-base">•</span>
+                            <span>Optimized database queries by resolving N+1 issues via <strong class="text-slate-900 dark:text-white font-semibold">@EntityGraph eager loading</strong> and implementing <strong class="text-slate-900 dark:text-white font-semibold">keyset pagination</strong>; improved response time using Spring <strong class="text-slate-900 dark:text-white font-semibold">@Async</strong>.</span>
+                        </li>
+                    </ul>
+
+                    <!-- Technology Badges -->
+                    <div class="pt-2 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800/60 text-secondary dark:text-indigo-300 font-mono text-xs font-medium">Spring Boot</span>
+                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800/60 text-secondary dark:text-indigo-300 font-mono text-xs font-medium">RabbitMQ</span>
+                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800/60 text-secondary dark:text-indigo-300 font-mono text-xs font-medium">Redis</span>
+                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800/60 text-secondary dark:text-indigo-300 font-mono text-xs font-medium">REST API</span>
+                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800/60 text-secondary dark:text-indigo-300 font-mono text-xs font-medium">@EntityGraph</span>
+                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800/60 text-secondary dark:text-indigo-300 font-mono text-xs font-medium">Keyset Pagination</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2: PTIT -->
+            <div class="relative group">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-[31px] md:-left-[39px] top-1 w-5 h-5 rounded-full bg-slate-400 dark:bg-slate-700 border-4 border-surface dark:border-slate-950 group-hover:scale-125 transition-transform"></div>
+
+                <!-- Card Content -->
+                <div class="p-6 md:p-8 rounded-2xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 shadow-sm space-y-6">
+                    <!-- Card Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border-color dark:border-slate-800 pb-4">
+                        <div>
+                            <h2 class="font-display font-bold text-2xl text-slate-900 dark:text-white">
+                                Posts and Telecommunications Institute of Technology (PTIT)
+                            </h2>
+                            <p class="text-base font-semibold text-secondary dark:text-accent font-mono mt-0.5">Bachelor of Information Technology, Software Engineering</p>
+                        </div>
+                        <div class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg w-fit">
+                            Aug. 2022 – Present
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono font-bold text-slate-900 dark:text-white">GPA:</span>
+                            <span class="px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs border border-emerald-200 dark:border-emerald-800/60">3.2 / 4.0</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400">
+                            Location: Ha Noi, Viet Nam. Focus on Software Engineering principles, Distributed Systems architecture, Database Systems, Object-Oriented Programming, and Data Structures & Algorithms.
+                        </p>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium">Software Engineering</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium">Distributed Systems</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium">Algorithms</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border-color dark:border-slate-800 bg-surface-card dark:bg-slate-900 py-10 transition-colors mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-secondary text-white font-display font-extrabold text-sm flex items-center justify-center">Q</span>
+                <span class="font-display font-bold text-slate-900 dark:text-white text-sm">Pham Ngoc Quang</span>
+                <span class="text-xs text-slate-400 font-mono">© 2026 • All Rights Reserved</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs font-mono text-slate-500 dark:text-slate-400">
+                <a href="https://github.com/quangpham10212004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/qnp211004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">LinkedIn</a>
+                <a href="mailto:qpquangpham10212004@gmail.com" class="hover:text-secondary dark:hover:text-accent transition-colors">Email</a>
+                <a href="resume.html" class="hover:text-secondary dark:hover:text-accent transition-colors">CV</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    </script>
+</body>
+</html>

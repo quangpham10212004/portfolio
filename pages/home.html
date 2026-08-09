@@ -66,7 +66,7 @@
     <!-- Top Navigation Bar -->
     <header class="sticky top-0 z-50 w-full border-b border-border-color/60 bg-surface/80 dark:bg-slate-900/80 glass-header transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group">
+            <a href="../index.html" class="flex items-center gap-2 group">
                 <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary to-accent flex items-center justify-center font-display font-extrabold text-white text-lg shadow-md group-hover:scale-105 transition-transform">Q</span>
                 <div class="flex flex-col">
                     <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">QUANG.DEV</span>
@@ -76,11 +76,11 @@
 
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 font-display text-sm font-bold tracking-wide">
-                <a href="index.html" class="text-secondary dark:text-accent border-b-2 border-secondary dark:border-accent pb-1">HOME</a>
-                <a href="pages/work.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">WORK</a>
-                <a href="pages/projects.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">PROJECTS</a>
-                <a href="pages/resume.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">RESUME</a>
-                <a href="pages/blog.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">BLOG</a>
+                <a href="../index.html" class="text-secondary dark:text-accent border-b-2 border-secondary dark:border-accent pb-1">HOME</a>
+                <a href="work.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">WORK</a>
+                <a href="projects.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">PROJECTS</a>
+                <a href="resume.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">RESUME</a>
+                <a href="blog.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">BLOG</a>
             </nav>
 
             <!-- Utility Buttons -->
@@ -118,10 +118,10 @@
                 </p>
                 
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="pages/projects.html" class="px-6 py-3.5 rounded-xl bg-secondary hover:bg-secondary-hover text-white font-display text-sm font-bold shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-0.5">
+                    <a href="projects.html" class="px-6 py-3.5 rounded-xl bg-secondary hover:bg-secondary-hover text-white font-display text-sm font-bold shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-0.5">
                         View Selected Projects
                     </a>
-                    <a href="pages/work.html" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 font-display text-sm font-bold transition-all hover:-translate-y-0.5">
+                    <a href="work.html" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 font-display text-sm font-bold transition-all hover:-translate-y-0.5">
                         Explore Work History
                     </a>
                 </div>
@@ -334,7 +334,7 @@
                     </div>
                 </div>
 
-                <a href="pages/resume.html" class="block w-full text-center py-3 rounded-xl bg-white text-slate-900 font-display font-bold text-sm hover:bg-indigo-50 transition-colors">
+                <a href="resume.html" class="block w-full text-center py-3 rounded-xl bg-white text-slate-900 font-display font-bold text-sm hover:bg-indigo-50 transition-colors">
                     View Full Interactive Resume
                 </a>
             </div>
@@ -355,7 +355,7 @@
                 <a href="https://github.com/quangpham10212004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">GitHub</a>
                 <a href="https://linkedin.com/in/qnp211004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">LinkedIn</a>
                 <a href="mailto:qpquangpham10212004@gmail.com" class="hover:text-secondary dark:hover:text-accent transition-colors">Email</a>
-                <a href="pages/resume.html" class="hover:text-secondary dark:hover:text-accent transition-colors">CV</a>
+                <a href="resume.html" class="hover:text-secondary dark:hover:text-accent transition-colors">CV</a>
             </div>
         </div>
     </footer>
@@ -475,7 +475,6 @@
             }
         }
 
-        // Apply saved theme preference on load
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');

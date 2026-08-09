@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume / CV - Pham Ngoc Quang</title>
+    <meta name="description" content="Resume of Pham Ngoc Quang - Software Developer @ VNPT Media | PTIT Alumni.">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0f172a",
+                        secondary: "#4f46e5",
+                        "secondary-hover": "#4338ca",
+                        accent: "#06b6d4",
+                        surface: "#f8fafc",
+                        "surface-card": "#ffffff",
+                        "on-surface": "#1e293b",
+                        "on-surface-muted": "#64748b",
+                        "border-color": "#e2e8f0"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        @media print {
+            header, footer, .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .print-card { border: none !important; box-shadow: none !important; padding: 0 !important; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased min-h-screen flex flex-col dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-border-color/60 bg-surface/80 dark:bg-slate-900/80 glass-header transition-colors no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-secondary to-accent flex items-center justify-center font-display font-extrabold text-white text-lg shadow-md group-hover:scale-105 transition-transform">Q</span>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">QUANG.DEV</span>
+                    <span class="text-[11px] font-mono text-secondary font-semibold uppercase tracking-wider">Software Developer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-display text-sm font-bold tracking-wide">
+                <a href="../index.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">HOME</a>
+                <a href="work.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">WORK</a>
+                <a href="projects.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">PROJECTS</a>
+                <a href="resume.html" class="text-secondary dark:text-accent border-b-2 border-secondary dark:border-accent pb-1">RESUME</a>
+                <a href="blog.html" class="text-on-surface-muted hover:text-secondary dark:hover:text-accent transition-colors pb-1">BLOG</a>
+            </nav>
+
+            <!-- Utility Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl border border-border-color dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <span class="material-symbols-outlined text-xl block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+                </button>
+                <a href="https://github.com/quangpham10212004" target="_blank" rel="noopener" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-display text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-700 transition-all shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-8">
+
+        <!-- Control Bar -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 no-print border-b border-border-color dark:border-slate-800 pb-6">
+            <div>
+                <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+                    Curriculum Vitae
+                </h1>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Official resume formatted for ATS and technical reviews.</p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+                <button onclick="window.print()" class="px-4 py-2.5 rounded-xl bg-secondary hover:bg-secondary-hover text-white font-display text-sm font-bold shadow-sm transition-all flex items-center gap-2">
+                    <span class="material-symbols-outlined text-lg">print</span>
+                    <span>Print / Save PDF</span>
+                </button>
+                <button onclick="toggleLatexModal()" class="px-4 py-2.5 rounded-xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 text-slate-700 dark:text-slate-200 font-display text-sm font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-2">
+                    <span class="material-symbols-outlined text-lg">code</span>
+                    <span>LaTeX Source</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Printable Resume Document Container -->
+        <div class="print-card p-8 md:p-12 rounded-2xl bg-surface-card dark:bg-slate-900 border border-border-color dark:border-slate-800 shadow-lg space-y-8">
+            
+            <!-- Header Section -->
+            <div class="text-center space-y-3 border-b border-border-color dark:border-slate-800 pb-6">
+                <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-wide uppercase">
+                    Pham Ngoc Quang
+                </h1>
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-1 font-mono text-xs text-slate-600 dark:text-slate-300">
+                    <span>+84 945211004</span>
+                    <span>•</span>
+                    <a href="mailto:qpquangpham10212004@gmail.com" class="text-secondary dark:text-accent underline">qpquangpham10212004@gmail.com</a>
+                    <span>•</span>
+                    <a href="https://linkedin.com/in/qnp211004" target="_blank" class="text-secondary dark:text-accent underline">linkedin.com/in/qnp211004</a>
+                    <span>•</span>
+                    <a href="https://github.com/quangpham10212004" target="_blank" class="text-secondary dark:text-accent underline">github.com/quangpham10212004</a>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <section class="space-y-3">
+                <h2 class="font-display font-bold text-lg uppercase tracking-wider text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-1">
+                    Education
+                </h2>
+                
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                    <div>
+                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Posts and Telecommunications Institute of Technology</h3>
+                        <p class="text-xs font-mono text-slate-600 dark:text-slate-300">Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0</p>
+                    </div>
+                    <div class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">
+                        Ha Noi | Aug. 2022 – Present
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="space-y-4">
+                <h2 class="font-display font-bold text-lg uppercase tracking-wider text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-1">
+                    Experience
+                </h2>
+
+                <div class="space-y-3">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">VNPT Media</h3>
+                            <p class="text-xs font-mono font-semibold text-secondary dark:text-accent">Software Developer</p>
+                        </div>
+                        <div class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">
+                            March 2026 – Present
+                        </div>
+                    </div>
+
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <li>Developed <strong>Docdev</strong>, a multi-tenant AI-powered document management SaaS platform using Spring Boot microservices, <strong>Redis, RabbitMQ</strong>.</li>
+                        <li>Designed an event-driven notification service that subscribes to a <strong>RabbitMQ</strong> topic exchange, routes typed domain events (task assignment, document review/approval, billing alerts) into per-tenant notification storage, and serves them via a paginated <strong>REST API</strong> with unread-count and bulk-read endpoints.</li>
+                        <li>Developed document collaboration features including versioning, tasks, checklists, groups, permissions, dashboards, activity tracking, and DOCX export.</li>
+                        <li>Developed backend modules for an eSIM purchasing platform, including order management, payment processing, and SIM provisioning; applied <strong>optimistic locking (@Version)</strong> to prevent race conditions on concurrent order approval and batch serial validation to eliminate per-row duplicate checks.</li>
+                        <li>Optimized database queries by resolving N+1 issues via <strong>@EntityGraph eager loading</strong> and implementing <strong>keyset pagination</strong>; improved response time using Spring <strong>@Async</strong>.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="space-y-4">
+                <h2 class="font-display font-bold text-lg uppercase tracking-wider text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-1">
+                    Projects
+                </h2>
+
+                <!-- Project 1 -->
+                <div class="space-y-2">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Order Food With Saga Pattern</h3>
+                        <a href="https://github.com/quangpham10212004/OrderFoodModule" target="_blank" class="font-mono text-xs text-secondary dark:text-accent underline">github.com/quangpham10212004/OrderFoodModule</a>
+                    </div>
+                    <ul class="list-disc list-outside ml-5 space-y-1 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <li>Developed a microservices-based Food Delivery Place Order module using <strong>Saga Choreography</strong> and the <strong>Outbox Pattern</strong> to manage distributed transactions across Order, Payment, and Delivery services.</li>
+                        <li>Implemented core flows including order creation, payment processing/refund, driver assignment, API Gateway routing, and real-time end-to-end demo of happy-path and rollback scenarios.</li>
+                        <li>Built the system with Spring Boot services, <strong>RabbitMQ</strong> event-driven messaging, database-per-service with MySQL, Docker Compose orchestration, and a React frontend for order flow visualization and API queries.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="space-y-2">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Shop Electronic products using Spring Boot</h3>
+                        <a href="https://github.com/quangpham10212004/Shop-Ecommerce-SpringBoot" target="_blank" class="font-mono text-xs text-secondary dark:text-accent underline">github.com/quangpham10212004/Shop-Ecommerce-SpringBoot</a>
+                    </div>
+                    <ul class="list-disc list-outside ml-5 space-y-1 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <li>Implemented foundational business flows including user management, product management, order creation, order lookup, and product availability validation through synchronous service-to-service communication.</li>
+                        <li>Implemented core commerce flows including user CRUD, product CRUD, order creation, order lookup, and product availability validation via OpenFeign between Order and Product services.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="space-y-3">
+                <h2 class="font-display font-bold text-lg uppercase tracking-wider text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-1">
+                    Technical Skills
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                    <div><strong class="text-slate-900 dark:text-white">Frameworks:</strong> SpringBoot, Django</div>
+                    <div><strong class="text-slate-900 dark:text-white">Databases:</strong> PostgreSQL, MySQL, MongoDB, Redis</div>
+                    <div><strong class="text-slate-900 dark:text-white">Microservices:</strong> Spring Cloud, Netflix Eureka, RabbitMQ</div>
+                    <div><strong class="text-slate-900 dark:text-white">Developer Tools:</strong> Git, GitHub, Docker, Redis, Linux, RabbitMQ, Kafka, Maven, Postman</div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- LaTeX Modal / Drawer -->
+        <div id="latex-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm p-4 overflow-y-auto flex items-center justify-center">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 space-y-4 text-slate-100 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <h3 class="font-display font-bold text-lg text-white">LaTeX Resume Source (current_resume_in_latex.txt)</h3>
+                    <button onclick="toggleLatexModal()" class="text-slate-400 hover:text-white">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl font-mono text-xs text-slate-300 max-h-96 overflow-y-auto">
+<pre><code>\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\begin{document}
+\begin{center}
+    \textbf{\Huge \scshape Pham Ngoc Quang} \\ \vspace{1pt}
+    \small +84 945211004 $|$ \href{mailto:qpquangpham10212004@gmail.com}{\underline{qpquangpham10212004@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/qnp211004}{\underline{linkedin.com/in/qnp211004}} $|$
+    \href{https://github.com/quangpham10212004}{\underline{github.com/quangpham10212004}}
+    \href{https://quangpham10212004.github.io/portfolio/}{Portfolio: quangpham10212004.github.io/portfolio}
+\end{center}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Posts and Telecommunications Institute of Technology}{Ha Noi}
+      {Bachelor of Information Technology, Software Engineering | GPA: 3.2/4.0}{Aug. 2022 -- Present}
+  \resumeSubHeadingListEnd
+
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {VNPT Media}{March 2026 -- Present}
+      {Software Developer}{}
+      \resumeItemListStart
+        \resumeItem{Developed Docdev, a multi-tenant AI-powered document management SaaS platform using Spring Boot microservices, Redis, RabbitMQ.}
+        \resumeItem{Designed an event-driven notification service that subscribes to a RabbitMQ topic exchange, routes typed domain events into per-tenant notification storage, and serves them via a paginated REST API.}
+        \resumeItem{Developed document collaboration features including versioning, tasks, checklists, groups, permissions, dashboards, activity tracking, and DOCX export.}
+        \resumeItem{Developed backend modules for an eSIM purchasing platform, including order management, payment processing, and SIM provisioning; applied optimistic locking (@Version) and batch serial validation.}
+        \resumeItem{Optimized database queries by resolving N+1 issues via @EntityGraph eager loading and implementing keyset pagination; improved response time using Spring @Async.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{Order Food With Saga Pattern}}{}
+          \resumeItemListStart
+            \resumeItem{Developed a microservices-based Food Delivery Place Order module using Saga Choreography and Outbox Pattern.}
+            \resumeItem{Implemented core flows including order creation, payment processing/refund, driver assignment, API Gateway routing.}
+            \resumeItem{Built with Spring Boot, RabbitMQ, MySQL, Docker Compose, and React frontend.}
+            \resumeItem{Github: https://github.com/quangpham10212004/OrderFoodModule}
+          \resumeItemListEnd
+      \resumeProjectHeading
+        {\textbf{Shop Electronic products using Spring Boot}}{}
+          \resumeItemListStart
+            \resumeItem{Implemented foundational business flows including user management, product management, order creation, order lookup, and availability validation via OpenFeign.}
+            \resumeItem{Github: https://github.com/quangpham10212004/Shop-Ecommerce-SpringBoot}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Frameworks}{: SpringBoot, Django} \\
+     \textbf{Databases}{: PostgreSQL, MySQL, MongoDB, Redis} \\
+     \textbf{Microservices}{: Spring Cloud, Netflix Eureka, RabbitMQ} \\
+     \textbf{Developer Tools}{: Git, GitHub, Docker, Redis, Linux, RabbitMQ, Kafka, Maven, Postman} \\
+    }}
+ \end{itemize}
+\end{document}</code></pre>
+                </div>
+                <div class="flex justify-end">
+                    <button onclick="toggleLatexModal()" class="px-4 py-2 rounded-xl bg-secondary text-white font-display text-sm font-bold">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border-color dark:border-slate-800 bg-surface-card dark:bg-slate-900 py-10 transition-colors mt-auto no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-secondary text-white font-display font-extrabold text-sm flex items-center justify-center">Q</span>
+                <span class="font-display font-bold text-slate-900 dark:text-white text-sm">Pham Ngoc Quang</span>
+                <span class="text-xs text-slate-400 font-mono">© 2026 • All Rights Reserved</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs font-mono text-slate-500 dark:text-slate-400">
+                <a href="https://github.com/quangpham10212004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/qnp211004" target="_blank" class="hover:text-secondary dark:hover:text-accent transition-colors">LinkedIn</a>
+                <a href="mailto:qpquangpham10212004@gmail.com" class="hover:text-secondary dark:hover:text-accent transition-colors">Email</a>
+                <a href="resume.html" class="hover:text-secondary dark:hover:text-accent transition-colors">CV</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLatexModal() {
+            const modal = document.getElementById('latex-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    </script>
+</body>
+</html>
