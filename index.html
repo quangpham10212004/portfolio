@@ -1192,13 +1192,13 @@ databases:
             const currentDate = new Date();
             
             // Calculate calendar months touched: (diff years * 12) + diff months + 1
-            let displayMonths = (currentDate.getFullYear() - 2026) * 12 + (currentDate.getMonth() - 2) + 1;
-            displayMonths = Math.max(4, displayMonths); // Ensure minimum 4 months as requested
+            // let displayMonths = (currentDate.getFullYear() - 2026) * 12 + (currentDate.getMonth() - 2) + 1;
+            // displayMonths = Math.max(4, displayMonths); // Ensure minimum 4 months as requested
             
             const statElement = document.getElementById('experience-stat');
             const labelElement = document.getElementById('experience-stat-label');
             if (statElement && labelElement) {
-                statElement.innerText = `${displayMonths} Mos`;
+                statElement.innerText = `1 Year`;
                 labelElement.innerText = 'Backend Experience';
             }
         }
